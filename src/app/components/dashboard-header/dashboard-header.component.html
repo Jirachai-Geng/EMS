@@ -1,0 +1,225 @@
+<div fxLayout="row" fxLayoutAlign="space-between none" style="background-color:rgb(91, 120, 250)">
+    <!-- select zone -->
+    <div fxFlex="25" fxFlexOffset="3">
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="10">
+                <div style="margin-top: 7px;">
+                    <mat-icon class="white-color">map</mat-icon>
+                </div>
+            </div>
+            <div fxFlex="90">
+                <select class="select-branch">
+                    <option value=""> test </option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- date time -->
+    <div fxFlex="35" style="padding-right: 20px;" fxLayoutAlign="end center" fxLayoutGap="20px">
+        <div>
+            <button mat-button [class.active]="activebutton === 0" (click)="setIndex(0)">kWh</button>
+            <button mat-button [class.active]="activebutton === 1" (click)="setIndex(1)">THB</button>
+            <button mat-button [class.active]="activebutton === 2" (click)="setIndex(2)">kg co2</button>
+        </div>
+        <div class="white-color">
+            {{time | date:'medium'}}
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isDataLoaded" fxLayout="row" fxLayoutAlign="space-between stretch" class="main-header">
+    <div fxFlex="28">
+        <div fxLayout="column" fxLayoutAlign="space-around center" style="height: 100%;">
+            <div fxLayout="row" fxLayoutAlign="space-between end" style="width: 100%;">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <img src="assets/icons/icon-amount.svg">
+                    <span class="big-title"> Total Energy Usage </span>
+                </div>
+                <div>
+                    <span class="big-subtitle"> Previous month</span>
+                </div>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+                <span style="font-size: 25px;">
+                    1000
+                </span>
+                <span style="font-size: 20px;">
+                    1000
+                </span>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+                <div class="big-time">
+                    {{firstDay | date:'yyyy/MM/dd'}} - today
+                </div>
+                <!-- <div>
+                    <div *ngIf=check_per_up(response.total_energy_usage.percent_dif.energy_dif_down) fxLayout="row"
+                        fxLayoutAlign="end center">
+                        <mat-icon class="green-arrow">south</mat-icon>
+                        <div style="font-size: 14px; color: lawngreen;">
+                            1000 %
+                        </div>
+                    </div>
+                    <div *ngIf=check_per_down(response.total_energy_usage.percent_dif.energy_dif_down) fxLayout="row"
+                        fxLayoutAlign="end center">
+                        <mat-icon class="red-arrow">north</mat-icon>
+                        <div style="font-size: 14px; color:red;">
+                            1000 %
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <mat-divider class="divider1" [vertical]="true"></mat-divider>
+
+    <div fxFlex="70">
+        <div fxLayout="column" fxLayoutAlign="space-evenly center" style="height: 100%;">
+            <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+                <div>
+                    Time of Use Rate : TOU
+                </div>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="space-between stretch" style="width: 100%;">
+                <div fxFlex="32">
+                    <div fxLayout="column" fxLayoutAlign="space-evenly center" style="height: 100%;">
+                        <div fxLayout="row" fxLayoutAlign="space-between end" style="width: 100%;">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <img src="assets/icons/on-peak.svg">
+                                <span class="title">On-peak </span>
+                            </div>
+                            <div>
+                                <span class="subtitle">Previous month </span>
+                            </div>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+                            <div>
+                                1000
+                            </div>
+                            <div>
+                                1000
+                            </div>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+                            <div class="on-off-time">
+                                at 09.00 - 22.00
+                            </div>
+                            <!-- <div>
+                                <div *ngIf=check_per_up(response.total_energy_usage.percent_dif.energy_dif_down)
+                                    fxLayout="row" fxLayoutAlign="end center">
+                                    <mat-icon class="green-arrow">south</mat-icon>
+                                    <div style="font-size: 14px; color: lawngreen;">
+                                        1000 %
+                                    </div>
+                                </div>
+                                <div *ngIf=check_per_down(response.total_energy_usage.percent_dif.energy_dif_down)
+                                    fxLayout="row" fxLayoutAlign="end center">
+                                    <mat-icon class="red-arrow">north</mat-icon>
+                                    <div style="font-size: 14px; color: red;">
+                                        1000 %
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <mat-divider class="divider2" [vertical]="true"></mat-divider>
+                <div fxFlex="32">
+                    <div fxLayout="column" fxLayoutAlign="space-evenly center" style="height: 100%;">
+                        <div fxLayout="row" fxLayoutAlign="space-between end" style="width: 100%;">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <img src="assets/icons/on-peak.svg">
+                                <span class="title">Off-peak </span>
+                            </div>
+                            <div>
+                                <span class="subtitle">Previous month </span>
+                            </div>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+                            <div>
+                                1000
+                            </div>
+                            <div>
+                                1000
+                            </div>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+                            <div class="on-off-time">
+                                at 22.00 - 09.00
+                            </div>
+                            <!-- <div>
+                                <div *ngIf=check_per_up(response.total_energy_usage.percent_dif.energy_dif_down)
+                                    fxLayout="row" fxLayoutAlign="end center">
+                                    <mat-icon class="green-arrow">south</mat-icon>
+                                    <div style="font-size: 14px; color: lawngreen;">
+                                        1000 %
+                                    </div>
+                                </div>
+                                <div *ngIf=check_per_down(response.total_energy_usage.percent_dif.energy_dif_down)
+                                    fxLayout="row" fxLayoutAlign="end center ">
+                                    <mat-icon class="red-arrow">north</mat-icon>
+                                    <div style="font-size: 14px; color: red;">
+                                        1000 %
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <mat-divider class="divider2" [vertical]="true"></mat-divider>
+                <div fxFlex="33">
+                    <div fxLayout="column" fxLayoutAlign="space-evenly center" style="height: 100%;">
+                        <div fxLayout="row" fxLayoutAlign="space-between end" style="width: 100%;">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <img src="assets/icons/peak-demand.svg">
+                                <span class="title">Peak-Demand </span>
+                            </div>
+                            <div>
+                                <span class="subtitle">Previous month </span>
+                            </div>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+                            <div>
+                                1000
+                            </div>
+                            <div>
+                                1000
+                            </div>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+                            <div class="peak-time">
+                                1000
+                            </div>
+                            <!-- <div>
+                                <div *ngIf=check_per_up(response_peak.transformer_1.percent_dif.peak_demand_dif_down)
+                                    fxLayout="row" fxLayoutAlign="end center">
+                                    <mat-icon class="green-arrow">south</mat-icon>
+                                    <div style="font-size: 14px; color: lawngreen;">
+                                        1000 %
+                                    </div>
+                                </div>
+                                <div *ngIf=check_per_down(response_peak.transformer_1.percent_dif.peak_demand_dif_down)
+                                    fxLayout="row" fxLayoutAlign="end center">
+                                    <mat-icon class="red-arrow">north</mat-icon>
+                                    <div style="font-size: 14px; color:red;">
+                                        1000 %
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

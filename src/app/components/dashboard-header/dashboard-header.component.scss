@@ -1,0 +1,113 @@
+.white-color {
+    color: white;
+  }
+  
+  .select-branch {
+    color: #fff;
+    background: rgb(91, 120, 250);
+    border: 0;
+    border-bottom: 1px solid;
+    scrollbar-arrow-color: rgb(91, 120, 250);
+    width: 60%;
+  }
+  
+  .select-transformer {
+    color: #fff;
+    background: #193769;
+    border: 0;
+    border-bottom: 1px solid;
+    scrollbar-arrow-color: #193769;
+    width: 150px;
+  }
+  
+  // inactive onclick
+  button {
+    background-color: rgb(91, 120, 250);
+    color: white;
+    border: 3px solid #7FFFD4 !important;
+    line-height: 20px;
+  }
+  
+  // active onclick
+  .active {
+    background-color: #7FFFD4;
+    color: #000;
+    border: 3px solid #7FFFD4 !important;
+  }
+  
+  .main-header {
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    background-color: #114696 !important;
+    color: #fff;
+    padding-left: 15px;
+  }
+  
+  .big-title {
+    padding-left: 5px !important;
+    // margin-bottom: 5px !important;
+    font-size: 20px;
+    color: #7FFFD4;
+  }
+  
+  .big-subtitle {
+    font-size: 14px;
+  }
+  
+  .big-energy {
+    font-size: 18px;
+  }
+  
+  .big-time {
+    font-size: 14px;
+  }
+  
+  .title {
+    padding-left: 5px !important;
+    font-size: 16px;
+    color: #7FFFD4;
+  }
+  
+  .subtitle {
+    padding-left: 5px !important;
+    font-size: 12px;
+  }
+  
+  .on-off-time {
+    font-size: 13px;
+  }
+  
+  .peak-time {
+    font-size: 14px;
+    color: #7FFFD4;
+  }
+  
+  .divider1 {
+    height: 120px;
+    border-right-color: #adb3b9;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .divider2 {
+    height: 100px;
+    border-right-color: #adb3b9;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .green-arrow {
+    transform: scale(0.65);
+    color: lawngreen;
+  }
+  
+  .red-arrow {
+    transform: scale(0.65);
+    color: red;
+  }
+  
+  ::ng-deep .mat-checkbox-checkmark-path {
+    stroke: black !important;
+  }
+  

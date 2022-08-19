@@ -1,0 +1,58 @@
+{
+  "login": {
+    "log_in": "เข้าสู่ระบบ",
+    "username": "อีเมลล์หรือชื่อผู้ใช้",
+    "password": "รหัสผ่าน",
+    "terms": "ข้อกำหนด",
+    "details":"สอบถามรายละเอียดเพิ่มเติม",
+    "copy_right": "เอ็กซ์เทน เทคโนโลยี บริษัทจำกัด สงวนสิทธิ์ทุกประการ"
+  },
+  "menu":{
+    "dashboard": "หน้าหลัก",
+    "meter": "มิเตอร์",
+    "tenant": "ผู้เช่า",
+    "leases": "พื้นที่เช่า",
+    "graph": "กราฟ",
+    "light": "สว่าง",
+    "dark": "มืด",
+    "fullscreen" : "เต็มหน้าจอ",
+    "fullscreen_exit" : "ออกจากเต็มหน้าจอ"
+  },
+  "dashboard_billing": {
+    "energy_billing": "หน้าหลัก",
+    "name_meter": "ชื่อมิเตอร์",
+    "tenant": "ผู้เช่า",
+    "leases_type": "รูปแบบสัญญา",
+    "billing_cycle": "รอบบิล",
+    "energy_last": "ค่าก่อนหน้า",
+    "energy_current": "ค่าล่าสุด",
+    "energy_used": "ค่าที่ใช้",
+    "unit_price": "ราคาหน่วย",
+    "total_revenue": "รายได้"
+  },
+  "tenant":{
+    "name":"ชื่อ",
+    "no_rental": "จำนวนพื้นที่เช่า",
+    "rental_date": "วันที่เช่า(เริ่ม-จบ)",
+    "create_date": "วันที่สร้าง",
+    "revenue_last": "รายได้รวมทั้งหมด",
+    "revenue_current": "รายได้รอเรียกเก็บ",
+    "status": "สถานะ"
+  },
+  "leases":{
+    "meter_name":"ชื่อมิเตอร์",
+    "model": "แบรนด์/โมเดล",
+    "serial": "หมายเลขซีเรียล",
+    "install_date": "ติดตั้งวันที่",
+    "tenant": "ผู้เช่า",
+    "leases_type": "รูปแบบสัญญา",
+    "unit_price": "ราคาหน่วย",
+    "total_meter": "มิเตอร์ทั้งหมด",
+    "on_renting": "กำลังถูกเช่า"
+  },
+  "graph":{
+    "meter_name":"Meter name : ID",
+    "parameter":"Parameter",
+    "submit": "Submit"
+  }
+}

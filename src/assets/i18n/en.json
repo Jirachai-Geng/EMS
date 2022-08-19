@@ -1,0 +1,58 @@
+{
+  "login": {
+    "log_in": "Log In",
+    "username": "Email or username",
+    "password": "password",
+    "terms": "Terms",
+    "details": "Inquiry for more details",
+    "copy_right": "XTEN Technology Inc. all rights reserved"
+  },
+  "menu": {
+    "dashboard": "Dashboard",
+    "meter": "Meter",
+    "tenant": "Tenant",
+    "leases": "Rental",
+    "graph": "Graph",
+    "light": "Light",
+    "dark": "Dark",
+    "fullscreen": "Full Screen",
+    "fullscreen_exit": "Full Screen Exit"
+  },
+  "dashboard_billing": {
+    "energy_billing": "Dashboard",
+    "name_meter": "Name Meter",
+    "tenant": "Tenant",
+    "leases_type": "Leases Type",
+    "billing_cycle": "Billing Cycle",
+    "energy_last": "Previous Energy",
+    "energy_current": "Current Energy",
+    "energy_used": "Energy Used",
+    "unit_price": "Unit Price",
+    "total_revenue": "Revenue"
+  },
+  "tenant": {
+    "name": "Name",
+    "no_rental": "No. of rental",
+    "rental_date": "Leases date(start-end)",
+    "create_date": "Create date",
+    "revenue_last": "Total revenue",
+    "revenue_current": "Revenue Incoming",
+    "status": "Status"
+  },
+  "leases": {
+    "meter_name": "Meter name",
+    "model": "Brand/Model",
+    "serial": "Serial number",
+    "install_date": "Install date",
+    "tenant": "Tenant",
+    "leases_type": "Leases Type",
+    "unit_price": "Unit price",
+    "total_meter": "Total meter",
+    "on_renting": "On renting"
+  },
+  "graph": {
+    "meter_name": "Meter name : ID",
+    "parameter": "Parameter",
+    "submit": "Submit"
+  }
+}

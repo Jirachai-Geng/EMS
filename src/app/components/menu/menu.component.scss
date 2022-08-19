@@ -1,0 +1,37 @@
+.font-menu {
+    padding-top: 10px;
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+
+.stats-cards {
+    .mat-card {
+        overflow: hidden;
+    }
+}
+
+.divider {
+    .mat-divider {
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+}
+
+a {
+    display: inline-block;
+
+    .mat-icon,
+    img {
+        padding-right: 10px;
+        padding-left: 15px;
+    }
+
+}
+
+button {
+    span {
+        font-size: 12px;
+    }
+}
+
+::ng-deep .mat-menu-panel.noti { width: 700px !important; }

@@ -1,0 +1,44 @@
+.title-tab{
+    display:inline;
+    font-size: 16px !important;
+}
+
+.compare-tab{
+    display:inline;
+    font-size: 12px !important;
+}
+
+::ng-deep .mat-tab-label{
+    display: flex !important;
+    height: auto !important;
+    width: auto !important
+}
+
+#box-content {
+    overflow:hidden;
+    margin-top:5px;
+    padding-bottom: 10px;
+}
+
+
+::ng-deep mat-card {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+}
+
+::ng-deep ::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+.chartHeight{
+    min-height: 380px;
+    width: 100%;
+}
+
+.donutHeight{
+    height: 170px;
+}
+
+.chartPerviousHeight{
+    height: 250px;
+}
