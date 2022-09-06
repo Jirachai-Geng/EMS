@@ -1,0 +1,88 @@
+#box-content {
+    overflow:hidden;
+    margin-right: 0;
+    margin-top:10px;
+    padding:10px
+}
+
+#head-table {
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.stats-cards {
+    .mat-card {
+      overflow: hidden;
+    }
+  }
+
+.white-color {
+    color: white;
+}
+
+.select-branch {
+    color: #fff;
+    background:  rgb(91, 120, 250);
+    border: 0;
+    border-bottom: 1px solid;
+    scrollbar-arrow-color:  rgb(91, 120, 250);
+    width: 60%;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    border-bottom: 2px solid #7FFFD4;
+}
+
+.divider{
+    .mat-divider{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.box-tag3 {
+    width:100%;
+    // font-family: Montserrat;
+    margin-bottom: 10px !important;
+    background-color: #fff;
+    border-radius: 8px;
+    opacity: 1;
+    box-shadow: 0 3px 6px #00000029;
+}
+// inactive onclick
+.toggle ::ng-deep mat-card {
+    h3{
+        font-weight: bold;
+    }
+    h5{
+        margin-bottom: 0;
+    }
+    #img2{
+        display: none;
+    }
+}
+
+// active onclick
+.active ::ng-deep mat-card{
+    background-color: rgb(91, 120, 250);
+    color: #7FFFD4;
+    h5{
+        color: #fff;
+        margin-bottom: 0;
+    }
+    #img1{
+        display: none;
+    }
+    #img2{
+        display: block;
+    }
+}
+
+.button-all-meter{
+    background-color: rgb(91, 120, 250);
+    color: #7FFFD4;
+}

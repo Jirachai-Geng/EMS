@@ -1,0 +1,54 @@
+#box-content {
+    overflow: hidden;
+    margin-right: 0;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  
+  #head-table {
+    font-weight: bold;
+    margin-top: 25px;
+  }
+  
+  .divider {
+    .mat-divider {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  // inactive onclick
+  button {
+    background-color: white;
+    color: hsl(226, 79%, 15%);
+    border: 1px solid #000 !important;
+    line-height: 30px;
+    font-size: 13px;
+  }
+  
+  // active onclick
+  .active {
+    background-color: hsl(226, 79%, 15%);
+    color: #ffd800;
+  }
+  
+  .hide_border {
+    border: none !important;
+    background: none;
+  }
+  
+  .hide-element {
+    display: none;
+  }
+  
+  .explore-maxWidth {
+    max-width: 65% !important;
+  }
+  
+  ::ng-deep {
+    .mat-card-title {
+      display: block;
+      margin-bottom: 3px !important;
+    }
+  }
+  

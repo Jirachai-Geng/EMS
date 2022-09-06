@@ -3,7 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AnonymousLayoutComponent } from './components/anonymous-layout.components';
 import { AuthenLayoutComponent } from './components/authen-layout.components';
+import { PowerQualityComponent } from './components/power-quality/power-quality.component';
+import { AllMeterComponent } from './components/all-meter/all-meter.component';
+import { ExploreComponent } from './components/explore/explore.component';
 
+const tamp = true;
 
 const routes: Routes = [
   {
@@ -12,7 +16,11 @@ const routes: Routes = [
     // canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent },
+      { path: 'dashboard', component: DashboardComponent},
+      { path: 'power-quality', component: PowerQualityComponent},
+      { path: 'all-meter', component: AllMeterComponent },
+      { path: 'explore', component: ExploreComponent },
+
     ],
   }
 ];

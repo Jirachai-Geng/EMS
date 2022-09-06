@@ -20,20 +20,13 @@ export class DashboardComponent implements OnInit {
         trigger: 'item'
       },
       legend: {
-        orient: 'vertical',
-        left: 'left',
+        bottom: 0,
       },
       series: [
         {
           name: 'Access From',
           type: 'pie',
-          radius: ['40%', '70%'],
           avoidLabelOverlap: false,
-          itemStyle: {
-            borderRadius: 10,
-            borderColor: '#fff',
-            borderWidth: 2
-          },
           label: {
             show: false,
             position: 'center'

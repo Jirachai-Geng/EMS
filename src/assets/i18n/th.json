@@ -9,7 +9,7 @@
   },
   "menu":{
     "dashboard": "หน้าหลัก",
-    "meter": "มิเตอร์",
+    "power_quality": "Power Quality",
     "tenant": "ผู้เช่า",
     "leases": "พื้นที่เช่า",
     "graph": "กราฟ",

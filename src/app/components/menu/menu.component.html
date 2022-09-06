@@ -22,12 +22,13 @@
                 <a mat-list-item routerLink='/dashboard' (click)="drawer.toggle()" routerLinkActive="active">
                     <mat-icon>dashboard</mat-icon> {{"menu.dashboard" | translate}}
                 </a>
-                <a mat-list-item routerLink='/meter' (click)="drawer.toggle()" routerLinkActive="active">
+                <a mat-list-item routerLink='/power-quality' (click)="drawer.toggle()" routerLinkActive="active">
+                    <img src="assets/images/menu/tenant.svg" width="24"> {{"menu.power_quality" | translate}}
+                </a>
+                <a mat-list-item routerLink='/explore' (click)="drawer.toggle()" routerLinkActive="active">
                     <img src="assets/images/menu/meter.svg" width="24"> {{"menu.meter" | translate}}
                 </a>
-                <a mat-list-item routerLink='/tenant' (click)="drawer.toggle()" routerLinkActive="active">
-                    <img src="assets/images/menu/tenant.svg" width="24"> {{"menu.tenant" | translate}}
-                </a>
+
                 <a mat-list-item routerLink='/leases' (click)="drawer.toggle()" routerLinkActive="active">
                     <img src="assets/images/menu/Leases.svg" width="24"> {{"menu.leases" | translate}}
                 </a>
@@ -92,15 +93,15 @@
                         </button>
                         <mat-menu #menu2="matMenu" class="noti">
                             <button mat-menu-item>
-                                <mat-icon style="color: orange">report_problem</mat-icon> SF1-47	Jul 2, 2022, 12:15 PM
+                                <mat-icon style="color: orange">report_problem</mat-icon> SF1-47 Jul 2, 2022, 12:15 PM
                             </button>
                             <button mat-menu-item>
-                                <mat-icon style="color: orange">report_problem</mat-icon> SF2-40	Jun 30, 2022, 1:45 AM
+                                <mat-icon style="color: orange">report_problem</mat-icon> SF2-40 Jun 30, 2022, 1:45 AM
                             </button>
                             <button mat-menu-item>
-                                <mat-icon style="color: orange">report_problem</mat-icon> SF1-41	Jun 19, 2022, 5:30 PM
+                                <mat-icon style="color: orange">report_problem</mat-icon> SF1-41 Jun 19, 2022, 5:30 PM
                             </button>
-                            <button mat-menu-item style="color: blue" fxLayout="row"  fxLayoutAlign="center center">
+                            <button mat-menu-item style="color: blue" fxLayout="row" fxLayoutAlign="center center">
                                 <u> show more </u>
                             </button>
                         </mat-menu>

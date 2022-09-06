@@ -7,8 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AnonymousLayoutComponent } from './components/anonymous-layout.components';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { DatePipe } from '@angular/common';
 
 // material
 import { MatCardModule } from '@angular/material/card';
@@ -29,6 +30,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { DashboardHeaderComponent } from './components/dashboard-header/dashboard-header.component';
 import { AuthenLayoutComponent } from './components/authen-layout.components';
@@ -36,6 +39,15 @@ import { I18nModule } from './i18n/i18n.module';
 import { MenuComponent } from './components/menu/menu.component';
 import { AvatarPhotoComponent } from './components/menu/avatar-photo/avatar-photo.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { PowerQualityComponent } from './components/power-quality/power-quality.component';
+import { PowerQualitySelectMdbComponent } from './components/power-quality-select-mdb/power-quality-select-mdb.component';
+import { HeaderComponent } from './components/header/header.component';
+import { AllMeterComponent } from './components/all-meter/all-meter.component';
+import { ExploreComponent } from './components/explore/explore.component';
+import { ExploreGraphAComponent } from './components/explore-graph-a/explore-graph-a.component';
+import { ExploreGraphBComponent } from './components/explore-graph-b/explore-graph-b.component';
+import { ExploreGraphCComponent } from './components/explore-graph-c/explore-graph-c.component';
+import { ExploreGraphDComponent } from './components/explore-graph-d/explore-graph-d.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +57,17 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     AnonymousLayoutComponent,
     AuthenLayoutComponent,
     AvatarPhotoComponent,
-    MenuComponent
+    MenuComponent,
+    PowerQualityComponent,
+    PowerQualitySelectMdbComponent,
+    HeaderComponent,
+    AllMeterComponent,
+    ExploreComponent,
+    ExploreGraphAComponent,
+    ExploreGraphBComponent,
+    ExploreGraphCComponent,
+    ExploreGraphDComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -54,6 +76,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     FlexLayoutModule,
     I18nModule,
     FormsModule,
+    ReactiveFormsModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),
     }),
@@ -91,9 +114,11 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     MatNativeDateModule,
     MatTabsModule,
     MatProgressBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTreeModule,
+    MatCheckboxModule
   ],
-  providers: [],
+  providers: [DatePipe,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

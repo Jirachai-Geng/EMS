@@ -23,6 +23,7 @@
     "@angular/router": "~13.1.0",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "angular-csv-ext": "^1.0.5",
     "ng-circle-progress": "^1.6.0",
     "ngx-echarts": "^8.0.1",
     "rxjs": "~7.4.0",

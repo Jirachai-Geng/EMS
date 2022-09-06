@@ -9,7 +9,7 @@
   },
   "menu": {
     "dashboard": "Dashboard",
-    "meter": "Meter",
+    "power_quality": "Power Quality",
     "tenant": "Tenant",
     "leases": "Rental",
     "graph": "Graph",

@@ -1,42 +1,46 @@
 <app-dashboard-header></app-dashboard-header>
 
 <div id="box-content">
-    <div fxLayout="row" fxLayoutAlign="center stretch" fxLayoutGap="10px" id="box-content">
-        <div fxFlex="25" fxLayout="column" style="height: 100%;" >
-            <div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="5px">
+
+    <div fxLayout="row" fxLayoutAlign="center stretch" fxLayoutGap="10px">
+        <div fxFlex="25" fxLayout="column" >
+            <div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="5px" style="height: 100%;">
                 <!-- Energy Distribution -->
-                <mat-card class="mat-elevation-z8">
-                    <div fxLayout="row" fxLayoutAlign="start end" fxLayoutGap="10px">
+                <mat-card class="mat-elevation-z8"  >
+                    <mat-card-title fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
                         <img style="margin-right:10px;" src="assets/icons/energy_distribution.svg">
-                        <mat-card-title style="display:inline-block; font-size: 17px;">
+                        <div style="display:inline-block; font-size: 17px;">
                             Energy Distribution
-                        </mat-card-title>
-                    </div>
+                        </div>
+                    </mat-card-title>
                     <mat-card-content>
+
                         <div echarts [options]="donutDistribution" class="donutHeight"></div>
+
+
                     </mat-card-content>
                 </mat-card>
-    
+
                 <mat-card class="mat-elevation-z8">
-                    <div fxLayout="row" fxLayoutAlign="start end" fxLayoutGap="10px">
+                    <mat-card-title fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
                         <img style="margin-right:10px;" src="assets/icons/page/dashboard/previous_chart.svg">
-                        <mat-card-title style="display:inline-block; font-size: 17px;"> Previous Electricity
-                        </mat-card-title>
-                    </div>
+                        <div style="display:inline-block; font-size: 17px;"> Previous Electricity
+                        </div>
+                    </mat-card-title>
                     <mat-card-content>
                         <div echarts [options]="barPrevious" class="chartPerviousHeight"></div>
                     </mat-card-content>
                 </mat-card>
             </div>
         </div>
-    
-        <div fxFlex="48" fxLayout="column" style="height: 100%;" >
+
+        <div fxFlex="48" fxLayout="column">
             <mat-card class="mat-elevation-z8" style="height: 100%;">
-                <div fxLayout="row" fxLayoutAlign="start end" fxLayoutGap="10px" style="padding-bottom: 20px;">
+                <mat-card-title fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px" style="padding-bottom: 20px;">
                     <img src="assets/icons/use_summary.svg">
-                    <mat-card-title style="font-size: 17px;"> Energy Usage Summary
-                    </mat-card-title>
-                </div>
+                    <div style="font-size: 17px;"> Energy Usage Summary
+                    </div>
+                </mat-card-title>
                 <mat-card-content>
                     <mat-tab-group mat-align-tabs="start" [selectedIndex]="2" style="height:100%;"
                         (selectedTabChange)="tabChanged($event)">
@@ -45,12 +49,12 @@
                             <ng-template mat-tab-label>
                                 <div fxLayout="column" fxLayoutAlign="space-around stretch" style="width: 150px;"
                                     fxLayoutGap="10px">
-    
+
                                     <div fxLayout="row" fxLayoutAlign="space-between end" style="width: 100%;">
                                         <div class="title-tab"> To Day </div>
                                         <div class="compare-tab"> Yesterday </div>
                                     </div>
-    
+
                                     <div fxLayout="row" fxLayoutAlign="space-between end"
                                         style="width: 100%; padding-bottom: 10px;">
                                         <div>
@@ -60,24 +64,24 @@
                                             {{response.yesterday}}
                                         </div>
                                     </div>
-    
+
                                 </div>
                             </ng-template>
-    
+
                             <!-- <app-dashboard-summary-day *ngIf="summary_day"></app-dashboard-summary-day> -->
                         </mat-tab>
-    
+
                         <!-- Energy Usage Summary day of week -->
                         <mat-tab>
                             <ng-template mat-tab-label>
                                 <div fxLayout="column" fxLayoutAlign="space-around stretch" style="width: 150px;"
                                     fxLayoutGap="10px">
-    
+
                                     <div fxLayout="row" fxLayoutAlign="space-between end" style="width: 100%;">
                                         <div class="title-tab"> Week </div>
                                         <div class="compare-tab"> Previous Week </div>
                                     </div>
-    
+
                                     <div fxLayout="row" fxLayoutAlign="space-between end"
                                         style="width: 100%; padding-bottom: 10px;">
                                         <div>
@@ -87,24 +91,24 @@
                                             {{response.last_week}}
                                         </div>
                                     </div>
-    
+
                                 </div>
                             </ng-template>
-    
+
                             <!-- <app-dashboard-summary-week *ngIf="summary_week"></app-dashboard-summary-week> -->
                         </mat-tab>
-    
+
                         <!-- Energy Usage Summary date of month -->
                         <mat-tab>
                             <ng-template mat-tab-label>
                                 <div fxLayout="column" fxLayoutAlign="space-around stretch" style="width: 150px;"
                                     fxLayoutGap="10px">
-    
+
                                     <div fxLayout="row" fxLayoutAlign="space-between end" style="width: 100%;">
                                         <div class="title-tab"> Month </div>
                                         <div class="compare-tab"> Previous Month </div>
                                     </div>
-    
+
                                     <div fxLayout="row" fxLayoutAlign="space-between end"
                                         style="width: 100%; padding-bottom: 10px;">
                                         <div>
@@ -117,20 +121,20 @@
                                 </div>
                             </ng-template>
                             <div echarts [options]="chartMonth" class="chartHeight"></div>
-    
+
                         </mat-tab>
-    
+
                         <!-- Energy Usage Summary month of year -->
                         <mat-tab>
                             <ng-template mat-tab-label>
                                 <div fxLayout="column" fxLayoutAlign="space-around stretch" style="width: 150px;"
                                     fxLayoutGap="10px">
-    
+
                                     <div fxLayout="row" fxLayoutAlign="space-between end" style="width: 100%;">
                                         <div class="title-tab"> Year </div>
                                         <div class="compare-tab"> Previous Year </div>
                                     </div>
-    
+
                                     <div fxLayout="row" fxLayoutAlign="space-between end"
                                         style="width: 100%; padding-bottom: 10px;">
                                         <div>
@@ -140,71 +144,76 @@
                                             {{response.last_year}}
                                         </div>
                                     </div>
-    
+
                                 </div>
                             </ng-template>
-    
+
                             <!-- <app-dashboard-summary-year *ngIf="summary_year"></app-dashboard-summary-year> -->
                         </mat-tab>
                     </mat-tab-group>
-    
-    
+
+
                 </mat-card-content>
             </mat-card>
         </div>
-    
-        <div fxFlex="24" fxLayout="column"  style="height: 100%;" >
+
+        <div fxFlex="24" fxLayout="column">
             <mat-card class="mat-elevation-z8" style="height: 100% !important;">
-                <div fxLayout="row" fxLayoutAlign="start end" fxLayoutGap="10px">
-                    <img style="margin-right:10px;" src="assets/icons/energy_distribution.svg">
-                    <mat-card-title style="display:inline-block; font-size: 17px;">
+                <mat-card-title fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="10px">
+                    <img style="margin-right:10px; height: 17px;" src="assets/icons/all-meter.svg">
+                     <div style="display:inline-block; font-size: 17px;">
                         All Meter
-                    </mat-card-title>
-                </div>
-                <mat-card-content>
-    
-                    <mat-tab-group>
-                        <mat-tab label="First"> MDB1 </mat-tab>
-                        <mat-tab label="Second"> MDB2 </mat-tab>
-                        <mat-tab label="Third"> MDB3 </mat-tab>
-                      </mat-tab-group>
-    
-                    <span>AHU A</span>
-                    <div fxLayout="row" fxLayoutAlign="space-between center">
-                        <mat-progress-bar fxFlex="70" mode="determinate" value="40"></mat-progress-bar>
-                        <span>115</span>
                     </div>
-    
-                    <span>AHU A</span>
-                    <div fxLayout="row" fxLayoutAlign="space-between center">
-                        <mat-progress-bar fxFlex="70" mode="determinate" value="40"></mat-progress-bar>
-                        <span>115</span>
+                </mat-card-title>
+                <mat-card-content fxLayout="column" fxLayoutAlign="space-between stretch" style="height: 95%">
+
+                    <div style="height: 100% !important;">
+                        <span>AHU A</span>
+                        <div fxLayout="row" fxLayoutAlign="space-between center">
+                            <mat-progress-bar fxFlex="70" mode="determinate" value="40"></mat-progress-bar>
+                            <span>115</span>
+                        </div>
+
+                        <span>AHU A</span>
+                        <div fxLayout="row" fxLayoutAlign="space-between center">
+                            <mat-progress-bar fxFlex="70" mode="determinate" value="40"></mat-progress-bar>
+                            <span>115</span>
+                        </div>
+
+                        <span>AHU A</span>
+                        <div fxLayout="row" fxLayoutAlign="space-between center">
+                            <mat-progress-bar fxFlex="70" mode="determinate" value="40"></mat-progress-bar>
+                            <span>115</span>
+                        </div>
+
+                        <span>AHU A</span>
+                        <div fxLayout="row" fxLayoutAlign="space-between center">
+                            <mat-progress-bar fxFlex="70" mode="determinate" value="40"></mat-progress-bar>
+                            <span>115</span>
+                        </div>
                     </div>
-    
-                    <span>AHU A</span>
-                    <div fxLayout="row" fxLayoutAlign="space-between center">
-                        <mat-progress-bar fxFlex="70" mode="determinate" value="40"></mat-progress-bar>
-                        <span>115</span>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between center" style="justify-content: end;">
+                        <div fxLayout="column" fxLayoutAlign="space-between center">
+                            <circle-progress [percent]="96" [radius]="40" [outerStrokeColor]="'#7FFFD4'"
+                                [showSubtitle]="false">
+                            </circle-progress>
+                            <span> Online </span>
+                        </div>
+
+                        <div fxLayout="column" fxLayoutAlign="space-between center">
+                            <circle-progress [percent]="3" [radius]="30" [outerStrokeColor]="'darkorange'"
+                                [showSubtitle]="false"></circle-progress>
+                            <span> Warning </span>
+                        </div>
+
+                        <div fxLayout="column" fxLayoutAlign="space-between center">
+                            <circle-progress [percent]="1" [radius]="30" [outerStrokeColor]="'#b71c1c'"
+                                [showSubtitle]="false">
+                            </circle-progress>
+                            <span> Problem </span>
+                        </div>
                     </div>
-    
-                    <span>AHU A</span>
-                    <div fxLayout="row" fxLayoutAlign="space-between center">
-                        <mat-progress-bar fxFlex="70" mode="determinate" value="40"></mat-progress-bar>
-                        <span>115</span>
-                    </div>
-    
-                    <div fxLayout="row" fxLayoutAlign="space-between center">
-                        <circle-progress [percent]="85" [radius]="40" [outerStrokeColor]="'#78C000'" [showSubtitle]="false">
-                        </circle-progress>
-    
-                        <circle-progress [percent]="3" [radius]="30" [outerStrokeColor]="'darkorange'"
-                            [showSubtitle]="false"></circle-progress>
-    
-                        <circle-progress [percent]="0" [radius]="30" [outerStrokeColor]="'#b71c1c'" [showSubtitle]="false">
-                        </circle-progress>
-    
-                    </div>
-    
                 </mat-card-content>
             </mat-card>
         </div>

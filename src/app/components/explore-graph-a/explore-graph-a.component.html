@@ -1,0 +1,45 @@
+<div id="box-content">
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+            <button mat-icon-button disabled></button>
+            <mat-checkbox class="checklist-leaf-node" (change)="todoLeafItemSelectionToggle(node)">{{node.item}}
+            </mat-checkbox>
+            <mat-form-field>
+                <mat-label>Parameter</mat-label>
+                <mat-select multiple (openedChange)="openedChange($event)" [ngModel]="ParameterCtr.item"
+                    (ngModelChange)="onChangeParameter($event,node.item)">
+                    <mat-option *ngFor="let i of parameter" [value]="i">{{i}}
+                        <!-- <mat-form-field *ngIf=(palette) id="hide-width-field">
+                        <input matInput [ngxMatColorPicker]="picker" [ngModel]="colorCtr.item" [disabled]="false">
+                        <ngx-mat-color-toggle matSuffix [for]="picker"></ngx-mat-color-toggle>
+                        <ngx-mat-color-picker #picker [touchUi]="false" [color]="color"></ngx-mat-color-picker>
+                    </mat-form-field> -->
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-tree-node>
+
+        <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+            <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.item">
+                <mat-icon class="mat-icon-rtl-mirror">
+                    {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                </mat-icon>
+            </button>
+            <mat-checkbox (change)="todoItemSelectionToggle(node)">{{node.item}}</mat-checkbox>
+            <mat-form-field>
+                <mat-label>Parameter</mat-label>
+                <mat-select multiple (openedChange)="openedChange($event)" [ngModel]="ParameterCtr.item"
+                    (ngModelChange)="onChangeParameter($event,node.item)">
+                    <mat-option *ngFor="let i of parameter" [value]="i">{{i}}
+                        <!-- <mat-form-field *ngIf=(palette) id="hide-width-field">
+                        <input matInput [ngxMatColorPicker]="picker" [ngModel]="colorCtr.item" [disabled]="false">
+                        <ngx-mat-color-toggle matSuffix [for]="picker"></ngx-mat-color-toggle>
+                        <ngx-mat-color-picker #picker [touchUi]="false" [color]="color"></ngx-mat-color-picker>
+                    </mat-form-field> -->
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-tree-node>
+    </mat-tree>
+
+</div>

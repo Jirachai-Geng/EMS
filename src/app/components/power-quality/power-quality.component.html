@@ -1,0 +1,507 @@
+<app-header></app-header>
+
+<div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="10px" id="box-content" class="stats-cards">
+    <mat-card #content class="mat-elevation-z8" fxFlex="75">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="start end" fxLayoutGap="10px">
+                <img style="margin-right:10px;" src="assets/icons/power-quality.svg">
+                <mat-card-title style="display:inline-block; font-size: 17px;">
+                    Power Quality
+                </mat-card-title>
+            </div>
+            <div >
+                <button (click)="button_allmeter()" class="button-all-meter" mat-raised-button> All Meter </button>
+            </div>
+        </div>
+        <mat-card-content class="divider">
+            <mat-divider></mat-divider>
+        </mat-card-content>
+        <!-- Voltage line to line -->
+        <div  fxLayout="row">
+            <div fxFlex="25" id="head-table">
+                Voltage line to line
+            </div>
+            <div fxFlex="75">
+                <table mat-table [dataSource]="Voltage_line_to_line">
+                    <!-- Parameter Column -->
+                    <ng-container matColumnDef="Parameter">
+                        <th mat-header-cell *matHeaderCellDef> Parameter </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Parameter}} </td>
+                    </ng-container>
+                    <!-- Base Column -->
+                    <ng-container matColumnDef="Base">
+                        <th mat-header-cell *matHeaderCellDef> Base </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Base}} </td>
+                    </ng-container>
+
+                    <!-- Units Column -->
+                    <ng-container matColumnDef="Units">
+                        <th mat-header-cell *matHeaderCellDef> Units </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Units}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Limits -->
+                    <ng-container matColumnDef="Limits">
+                        <th mat-header-cell *matHeaderCellDef> Limits </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Limits}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Value -->
+                    <ng-container matColumnDef="Value">
+                        <th mat-header-cell *matHeaderCellDef> Value </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Value}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Alerts -->
+                    <ng-container matColumnDef="Alerts">
+                        <th mat-header-cell *matHeaderCellDef> Alerts </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Alerts}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+
+        <mat-card-content class="divider">
+            <mat-divider></mat-divider>
+        </mat-card-content>
+
+        <!-- Unbalance Voltage -->
+        <div fxLayout="row">
+            <div fxFlex="25" id="head-table">
+                Unbalance Voltage
+            </div>
+            <div fxFlex="75">
+                <table mat-table [dataSource]="Unbalance_voltage">
+                    <!-- Parameter Column -->
+                    <ng-container matColumnDef="Parameter">
+                        <th mat-header-cell *matHeaderCellDef> Parameter </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Parameter}} </td>
+                    </ng-container>
+                    <!-- Base Column -->
+                    <ng-container matColumnDef="Base">
+                        <th mat-header-cell *matHeaderCellDef> Base </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Base}} </td>
+                    </ng-container>
+
+                    <!-- Units Column -->
+                    <ng-container matColumnDef="Units">
+                        <th mat-header-cell *matHeaderCellDef> Units </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Units}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Limits -->
+                    <ng-container matColumnDef="Limits">
+                        <th mat-header-cell *matHeaderCellDef> Limits </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Limits}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Value -->
+                    <ng-container matColumnDef="Value">
+                        <th mat-header-cell *matHeaderCellDef> Value </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Value}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Alerts -->
+                    <ng-container matColumnDef="Alerts">
+                        <th mat-header-cell *matHeaderCellDef> Alerts </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Alerts}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+
+        <mat-card-content class="divider">
+            <mat-divider></mat-divider>
+        </mat-card-content>
+
+        <!-- Frequency -->
+        <div fxLayout="row">
+            <div fxFlex="25" id="head-table">
+                Frequency
+            </div>
+            <div fxFlex="75">
+                <table mat-table [dataSource]="Freq">
+                    <!-- Parameter Column -->
+                    <ng-container matColumnDef="Parameter">
+                        <th mat-header-cell *matHeaderCellDef> Parameter </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Parameter}} </td>
+                    </ng-container>
+                    <!-- Base Column -->
+                    <ng-container matColumnDef="Base">
+                        <th mat-header-cell *matHeaderCellDef> Base </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Base}} </td>
+                    </ng-container>
+
+                    <!-- Units Column -->
+                    <ng-container matColumnDef="Units">
+                        <th mat-header-cell *matHeaderCellDef> Units </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Units}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Limits -->
+                    <ng-container matColumnDef="Limits">
+                        <th mat-header-cell *matHeaderCellDef> Limits </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Limits}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Value -->
+                    <ng-container matColumnDef="Value">
+                        <th mat-header-cell *matHeaderCellDef> Value </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Value}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Alerts -->
+                    <ng-container matColumnDef="Alerts">
+                        <th mat-header-cell *matHeaderCellDef> Alerts </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Alerts}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+
+        <mat-card-content class="divider">
+            <mat-divider></mat-divider>
+        </mat-card-content>
+
+        <!-- Current -->
+        <div fxLayout="row">
+            <div fxFlex="25" id="head-table">
+                Current
+            </div>
+            <div fxFlex="75">
+                <table mat-table [dataSource]="Current">
+                    <!-- Parameter Column -->
+                    <ng-container matColumnDef="Parameter">
+                        <th mat-header-cell *matHeaderCellDef> Parameter </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Parameter}} </td>
+                    </ng-container>
+                    <!-- Base Column -->
+                    <ng-container matColumnDef="Base">
+                        <th mat-header-cell *matHeaderCellDef> Base </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Base}} </td>
+                    </ng-container>
+
+                    <!-- Units Column -->
+                    <ng-container matColumnDef="Units">
+                        <th mat-header-cell *matHeaderCellDef> Units </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Units}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Limits -->
+                    <ng-container matColumnDef="Limits">
+                        <th mat-header-cell *matHeaderCellDef> Limits </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Limits}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Value -->
+                    <ng-container matColumnDef="Value">
+                        <th mat-header-cell *matHeaderCellDef> Value </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Value}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Alerts -->
+                    <ng-container matColumnDef="Alerts">
+                        <th mat-header-cell *matHeaderCellDef> Alerts </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Alerts}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+
+        <mat-card-content class="divider">
+            <mat-divider></mat-divider>
+        </mat-card-content>
+
+        <!-- Power Quality -->
+        <div fxLayout="row">
+            <div fxFlex="25" id="head-table">
+                Power Quality
+            </div>
+            <div fxFlex="75">
+                <table mat-table [dataSource]="Power_quality">
+                    <!-- Parameter Column -->
+                    <ng-container matColumnDef="Parameter">
+                        <th mat-header-cell *matHeaderCellDef> Parameter </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Parameter}} </td>
+                    </ng-container>
+                    <!-- Base Column -->
+                    <ng-container matColumnDef="Base">
+                        <th mat-header-cell *matHeaderCellDef> Base </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Base}} </td>
+                    </ng-container>
+
+                    <!-- Units Column -->
+                    <ng-container matColumnDef="Units">
+                        <th mat-header-cell *matHeaderCellDef> Units </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Units}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Limits -->
+                    <ng-container matColumnDef="Limits">
+                        <th mat-header-cell *matHeaderCellDef> Limits </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Limits}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Value -->
+                    <ng-container matColumnDef="Value">
+                        <th mat-header-cell *matHeaderCellDef> Value </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Value}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Alerts -->
+                    <ng-container matColumnDef="Alerts">
+                        <th mat-header-cell *matHeaderCellDef> Alerts </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Alerts}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+
+        <mat-card-content class="divider">
+            <mat-divider></mat-divider>
+        </mat-card-content>
+
+        <!-- Power Factor Quality -->
+        <div fxLayout="row">
+            <div fxFlex="25" id="head-table">
+                Power Factor Quality
+            </div>
+            <div fxFlex="75">
+                <table mat-table [dataSource]="Power_factor_quality">
+                    <!-- Parameter Column -->
+                    <ng-container matColumnDef="Parameter">
+                        <th mat-header-cell *matHeaderCellDef> Parameter </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Parameter}} </td>
+                    </ng-container>
+                    <!-- Base Column -->
+                    <ng-container matColumnDef="Base">
+                        <th mat-header-cell *matHeaderCellDef> Base </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Base}} </td>
+                    </ng-container>
+
+                    <!-- Units Column -->
+                    <ng-container matColumnDef="Units">
+                        <th mat-header-cell *matHeaderCellDef> Units </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Units}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Limits -->
+                    <ng-container matColumnDef="Limits">
+                        <th mat-header-cell *matHeaderCellDef> Limits </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Limits}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Value -->
+                    <ng-container matColumnDef="Value">
+                        <th mat-header-cell *matHeaderCellDef> Value </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Value}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Alerts -->
+                    <ng-container matColumnDef="Alerts">
+                        <th mat-header-cell *matHeaderCellDef> Alerts </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Alerts}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+
+        <mat-card-content class="divider">
+            <mat-divider></mat-divider>
+        </mat-card-content>
+
+        <!-- Total Harmonic Distortion Voltage -->
+        <div fxLayout="row">
+            <div fxFlex="25" id="head-table">
+                Total Harmonic Distortion Voltage
+            </div>
+            <div fxFlex="75">
+                <table mat-table [dataSource]="Total_harmonic_voltage">
+                    <!-- Parameter Column -->
+                    <ng-container matColumnDef="Parameter">
+                        <th mat-header-cell *matHeaderCellDef> Parameter </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Parameter}} </td>
+                    </ng-container>
+                    <!-- Base Column -->
+                    <ng-container matColumnDef="Base">
+                        <th mat-header-cell *matHeaderCellDef> Base </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Base}} </td>
+                    </ng-container>
+
+                    <!-- Units Column -->
+                    <ng-container matColumnDef="Units">
+                        <th mat-header-cell *matHeaderCellDef> Units </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Units}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Limits -->
+                    <ng-container matColumnDef="Limits">
+                        <th mat-header-cell *matHeaderCellDef> Limits </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Limits}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Value -->
+                    <ng-container matColumnDef="Value">
+                        <th mat-header-cell *matHeaderCellDef> Value </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Value}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Alerts -->
+                    <ng-container matColumnDef="Alerts">
+                        <th mat-header-cell *matHeaderCellDef> Alerts </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Alerts}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+
+        <mat-card-content class="divider">
+            <mat-divider></mat-divider>
+        </mat-card-content>
+
+        <!-- Total Harmonic Distortion Current -->
+        <div fxLayout="row">
+            <div fxFlex="25" id="head-table">
+                Total Harmonic Distortion Current
+            </div>
+            <div fxFlex="75">
+                <table mat-table [dataSource]="Total_harmonic_current">
+                    <!-- Parameter Column -->
+                    <ng-container matColumnDef="Parameter">
+                        <th mat-header-cell *matHeaderCellDef> Parameter </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Parameter}} </td>
+                    </ng-container>
+                    <!-- Base Column -->
+                    <ng-container matColumnDef="Base">
+                        <th mat-header-cell *matHeaderCellDef> Base </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Base}} </td>
+                    </ng-container>
+
+                    <!-- Units Column -->
+                    <ng-container matColumnDef="Units">
+                        <th mat-header-cell *matHeaderCellDef> Units </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Units}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Limits -->
+                    <ng-container matColumnDef="Limits">
+                        <th mat-header-cell *matHeaderCellDef> Limits </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Limits}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Value -->
+                    <ng-container matColumnDef="Value">
+                        <th mat-header-cell *matHeaderCellDef> Value </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Value}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Alerts -->
+                    <ng-container matColumnDef="Alerts">
+                        <th mat-header-cell *matHeaderCellDef> Alerts </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Alerts}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+
+        <mat-card-content class="divider">
+            <mat-divider></mat-divider>
+        </mat-card-content>
+
+
+        <!-- Harmonic Distortion -->
+        <div fxLayout="row">
+            <div fxFlex="25" id="head-table">
+                Harmonic Distortion
+            </div>
+            <div fxFlex="75">
+                <table mat-table [dataSource]="Harmonic_distortion">
+                    <!-- Parameter Column -->
+                    <ng-container matColumnDef="Parameter">
+                        <th mat-header-cell *matHeaderCellDef> Parameter </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Parameter}} </td>
+                    </ng-container>
+                    <!-- Base Column -->
+                    <ng-container matColumnDef="Base">
+                        <th mat-header-cell *matHeaderCellDef> Base </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Base}} </td>
+                    </ng-container>
+
+                    <!-- Units Column -->
+                    <ng-container matColumnDef="Units">
+                        <th mat-header-cell *matHeaderCellDef> Units </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Units}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Limits -->
+                    <ng-container matColumnDef="Limits">
+                        <th mat-header-cell *matHeaderCellDef> Limits </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Limits}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Value -->
+                    <ng-container matColumnDef="Value">
+                        <th mat-header-cell *matHeaderCellDef> Value </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Value}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Alerts -->
+                    <ng-container matColumnDef="Alerts">
+                        <th mat-header-cell *matHeaderCellDef> Alerts </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Alerts}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+
+    </mat-card>
+
+    <mat-card class="mat-elevation-z8" fxFlex="25">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <img style="margin-right:10px;" src="assets/icons/MDB.svg">
+            <mat-card-title style="display:inline-block; font-size: 17px;">
+                Main Distribution Board
+            </mat-card-title>
+        </div>
+
+
+        <mat-card-content class="divider">
+            <mat-divider></mat-divider>
+        </mat-card-content>
+
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+            <app-power-quality-select-mdb *ngFor="let card of cards; let i = index" [title]="card.title"
+                [sub_title]="card.sub_title" style="width: 100%; height: 100%; padding-bottom: 10px;" [id]="card.id"
+                class="toggle" [class.active]="selectedIndex === i" (click)="setIndex(i)"
+                (childToParent)="childToParent($event)">
+            </app-power-quality-select-mdb>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,24 @@
+<div fxLayout="row" fxLayoutAlign="space-between none" style="background-color: rgb(91, 120, 250);">
+    <!-- select zone -->
+    <div fxFlex="25" fxFlexOffset="3">
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="10">
+                <div style="margin-top: 7px;">
+                    <mat-icon class="white-color">map</mat-icon>
+                </div>
+            </div>
+            <div fxFlex="90">
+                <select class="select-branch">
+                    <option value="">test</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- date time -->
+    <div fxFlex="15" fxLayoutAlign="center center">
+        <div fxLayout="row" class="white-color">
+            {{time | date:'medium'}}
+        </div>
+    </div>
+</div>

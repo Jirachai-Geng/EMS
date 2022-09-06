@@ -1,0 +1,11 @@
+<mat-card (click)="sendToParent(id);" style="width: 100%;" >
+    <div fxFlex="row" fxLayoutAlign="space-between center">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <img id="img1" style="margin-right:10px;" src="assets/icons/Meter.svg">
+            <img id="img2" style="margin-right:10px;" src="assets/icons/Meter-white.svg">
+            <h3 fxFlex="50">{{title}}</h3>
+        </div>
+
+        <h5 fxFlex="50" style="text-align: right;">{{sub_title}}</h5>
+    </div>
+</mat-card>
