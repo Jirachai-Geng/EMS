@@ -54,6 +54,12 @@
                 <div class="big-time">
                     {{firstDay | date:'yyyy/MM/dd'}} - today
                 </div>
+                <div fxLayout="row" fxLayoutAlign="end center">
+                    <mat-icon class="green-arrow">south</mat-icon>
+                    <div style="font-size: 14px; color: lawngreen;">
+                        35 %
+                    </div>
+                </div>
                 <!-- <div>
                     <div *ngIf=check_per_up(response.total_energy_usage.percent_dif.energy_dif_down) fxLayout="row"
                         fxLayoutAlign="end center">
@@ -110,6 +116,12 @@
                             <div class="on-off-time">
                                 at 09.00 - 22.00
                             </div>
+                            <div fxLayout="row" fxLayoutAlign="end center">
+                                <mat-icon class="green-arrow">south</mat-icon>
+                                <div style="font-size: 14px; color: lawngreen;">
+                                    35 %
+                                </div>
+                            </div>
                             <!-- <div>
                                 <div *ngIf=check_per_up(response.total_energy_usage.percent_dif.energy_dif_down)
                                     fxLayout="row" fxLayoutAlign="end center">
@@ -155,6 +167,12 @@
                             <div class="on-off-time">
                                 at 22.00 - 09.00
                             </div>
+                            <div fxLayout="row" fxLayoutAlign="end center">
+                                <mat-icon class="red-arrow">north</mat-icon>
+                                <div style="font-size: 14px; color: red;">
+                                    35 %
+                                </div>
+                            </div>
                             <!-- <div>
                                 <div *ngIf=check_per_up(response.total_energy_usage.percent_dif.energy_dif_down)
                                     fxLayout="row" fxLayoutAlign="end center">
@@ -199,6 +217,12 @@
                         <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
                             <div class="peak-time">
                                 1000
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="end center">
+                                <mat-icon class="green-arrow">south</mat-icon>
+                                <div style="font-size: 14px; color: lawngreen;">
+                                    35 %
+                                </div>
                             </div>
                             <!-- <div>
                                 <div *ngIf=check_per_up(response_peak.transformer_1.percent_dif.peak_demand_dif_down)

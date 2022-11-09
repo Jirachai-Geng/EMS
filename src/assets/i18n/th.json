@@ -9,6 +9,7 @@
   },
   "menu":{
     "dashboard": "หน้าหลัก",
+    "explore": "วิเคราะห์",
     "power_quality": "Power Quality",
     "tenant": "ผู้เช่า",
     "leases": "พื้นที่เช่า",

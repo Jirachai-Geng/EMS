@@ -1,0 +1,39 @@
+<svg id="White" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1594" height="310" viewBox="0 0 1594 310">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="308.25" y1="243.112" x2="0.313" y2="65.325" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#485edb"/>
+      <stop offset="0.01" stop-color="#485edb"/>
+      <stop offset="1" stop-color="#55e4bb"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="184.531" y1="106.286" x2="308.031" y2="16.558" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cc2115"/>
+      <stop offset="1" stop-color="#e74b45"/>
+    </linearGradient>
+  </defs>
+  <path id="H" class="cls-1" d="M1437,139V308h48V244h58v63h50V138h-49v64h-58V139h-49Z"/>
+  <path id="C" class="cls-1" d="M1392,145s-24.6-10.77-60-9c0,0-77.57-2.988-85,74a287.491,287.491,0,0,0,0,29s5.39,61.83,70,70c0,0,51.53,4.557,76-7V259s-54.55,21.123-82,0c0,0-10.64-5.372-14-26,0,0-.65-13.07,1-22,0,0,1.56-17.76,16-26,0,0,26.37-16.9,78,3V145Z"/>
+  <path id="E" class="cls-1" d="M1083,139V308h128V270h-79V242h69V204h-69V176h79V139H1083Z"/>
+  <path id="T" class="cls-1" d="M900,138v37h47V307h50V176h47V138H900Z"/>
+  <path id="N" class="cls-1" d="M706,138V307h50V218l62,89h43V138H811v89l-63-89H706Z"/>
+  <path id="E-2" data-name="E" class="cls-1" d="M537,139V308H665V270H586V242h69V204H586V176h79V139H537Z"/>
+  <path id="T-2" data-name="T" class="cls-1" d="M354,138v37h47V307h50V176h47V138H354Z"/>
+  <path class="cls-2" d="M83.054,12.159S43.267-19.6,10.445,21.082c0,0-21.128,24.611-1.786,58.294l74.4,74.949L9.849,228.68s-22.931,26.708,2.381,61.268c0,0,29.17,33.783,69.039,8.327l72.609-72.57,71.42,70.786s30.792,26.423,65.468-.595c0,0,33.548-28.253,7.736-68.406Z"/>
+  <path class="cls-3" d="M246.274,0.417c34.1,0,61.751,27.312,61.751,61s-27.647,61-61.751,61-61.75-27.313-61.75-61S212.171,0.417,246.274.417Z"/>
+</svg>

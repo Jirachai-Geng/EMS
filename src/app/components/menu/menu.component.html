@@ -23,18 +23,22 @@
                     <mat-icon>dashboard</mat-icon> {{"menu.dashboard" | translate}}
                 </a>
                 <a mat-list-item routerLink='/power-quality' (click)="drawer.toggle()" routerLinkActive="active">
-                    <img src="assets/images/menu/tenant.svg" width="24"> {{"menu.power_quality" | translate}}
+                    <img src="assets/icons/powerquality_menu.svg" width="24"> {{"menu.power_quality" | translate}}
                 </a>
                 <a mat-list-item routerLink='/explore' (click)="drawer.toggle()" routerLinkActive="active">
-                    <img src="assets/images/menu/meter.svg" width="24"> {{"menu.meter" | translate}}
+                    <img src="assets/icons/explore_menu.svg" width="24"> {{"menu.explore" | translate}}
+                </a>
+                <a mat-list-item [matMenuTriggerFor]="menu" xPosition="after">
+                    <img src="assets/icons/setting_menu.svg">Setting
                 </a>
 
-                <a mat-list-item routerLink='/leases' (click)="drawer.toggle()" routerLinkActive="active">
-                    <img src="assets/images/menu/Leases.svg" width="24"> {{"menu.leases" | translate}}
-                </a>
-                <a mat-list-item routerLink='/graph' (click)="drawer.toggle()" routerLinkActive="active">
-                    <mat-icon>timeline</mat-icon>{{"menu.graph" | translate}}
-                </a>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item> Notification </button>
+                    <button [disabled] mat-menu-item> Group</button>
+                </mat-menu>
+
+
+
             </div>
 
         </mat-nav-list>
@@ -47,6 +51,7 @@
             <div fxFlex="20">
                 <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
                     <img src="assets/images/logo-full.svg" width="80" style="padding-bottom: 5px; padding-left: 24px;">
+
                     <button type="button" aria-label="Toggle sidenav" mat-icon-button mat-button
                         (click)="drawer.toggle()">
                         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
@@ -55,7 +60,8 @@
                         src="https://drive.google.com/uc?id=1ATQWKgVFjmSht-55Y3Cf-c_bQg0bmk4g&export=download"
                         alt="user-logo"> -->
 
-                    <!-- <img max-width="75" height="25" [src]=user_info.logo_url alt="user-logo"> -->
+                    <img src="https://drive.google.com/uc?id=1Nfo9WQG57Znxb-VpSHBDUCYVF51Ig1ae&export=download"
+                        width="75" style="padding-bottom: 5px;">
                 </div>
             </div>
             <span class="right-spacer"></span>
@@ -75,7 +81,7 @@
                     </button> -->
 
                     <div class="font-menu">
-                        Energy Billing
+                        Energy Management
                     </div>
 
                     <button mat-icon-button>

@@ -43,7 +43,7 @@ export class AvatarPhotoComponent implements OnInit {
 
   private createInititals(): void {
     let initials = "";
-
+    this.name = "Ad Min"
     for (let i = 0; i < this.name.length; i++) {
       if (this.name.charAt(i) === ' ') {
         continue;

@@ -20,16 +20,15 @@
   // inactive onclick
   button {
     background-color: white;
-    color: hsl(226, 79%, 15%);
-    border: 1px solid #000 !important;
+    color: rgb(91, 120, 250);
     line-height: 30px;
     font-size: 13px;
   }
   
   // active onclick
   .active {
-    background-color: hsl(226, 79%, 15%);
-    color: #ffd800;
+    background-color:rgb(91, 120, 250);
+    color: #7FFFD4;
   }
   
   .hide_border {
@@ -42,7 +41,7 @@
   }
   
   .explore-maxWidth {
-    max-width: 65% !important;
+    max-width: 70% !important;
   }
   
   ::ng-deep {

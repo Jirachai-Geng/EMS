@@ -1,0 +1,62 @@
+<div fxLayout="column" fxFlexFill fxLayoutAlign="center stretch" class="demo-wrap">
+    <div fxLayout="row" fxLayoutAlign="center stretch">
+        <div fxFlex="65" fxHide fxShow.gt-sm fxLayout="column" fxLayoutAlign="center center">
+            <img ngClass="img-factory" src="assets/images/factory.svg">
+            <button mat-raised-button class="btn-detail">{{"login.details" | translate}}</button>
+            <P style="font-size: 12px; color: grey;"> copyright 2021 &copy; {{"login.copy_right" | translate}} </P>
+        </div>
+        <div fxLayoutAlign="center center">
+            <mat-card ngClass="login-box" class="mat-elevation-z8" style="height: 70% !important;">
+                <div div fxLayout="column" fxLayoutAlign="space-between none" style="height: 100%;">
+                    <div>
+                        <img mat-card-image style="width: 300px;" src="assets/images/logo-full.svg">
+                        <mat-card-content style="padding-top: 30px">
+                            <form #loginForm="ngForm" (submit)="onSubmit(loginForm.value)">
+                                <p>
+                                    <mat-form-field appearance="outline" style="width: 100%;">
+                                    <mat-label> {{"login.username" | translate}}</mat-label>
+                                        <input ngModel name="email" type="text" matInput required>
+                                        <!-- <mat-error *ngIf="user">{{getErrorMessage()}}</mat-error> -->
+
+                                    </mat-form-field>
+                                </p>
+
+                                <p>
+                                    <mat-form-field appearance="outline" style="width: 100%;">
+                                        <mat-label> {{"login.password" | translate}} </mat-label>
+                                        <input ngModel name="password" [type]="hide ? 'password' : 'text'" matInput
+                                            placeholder="password">
+                                        <button mat-icon-button matSuffix (click)="hide = !hide"
+                                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                        </button>
+                                    </mat-form-field>
+                                </p>
+
+                                <div style="margin-bottom: 8%; margin-top: 5%; border-radius: 15px;">
+                                    <button type="submit" mat-raised-button
+                                        style="width: 100%; background-color: #5B78FA; color: white;">
+                                        {{"login.log_in"|translate}} </button>
+                                </div>
+                            </form>
+                        </mat-card-content>
+                    </div>
+                    <div div fxLayout="row" fxLayoutAlign="space-between center">
+                        <mat-form-field fxFlex="30" style="font-size: 12px;">
+                            <mat-select (selectionChange)="onSelectLanguage($event.value)"
+                                [(ngModel)]="selectedValue" name="name">
+                                <mat-option *ngFor="let language of Languages" [value]="language.value">
+                                    <span>{{language.viewValue}}</span>
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <button mat-button style="font-size: 12px"> {{"login.terms" | translate}} </button>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+
+
+    </div>
+</div>

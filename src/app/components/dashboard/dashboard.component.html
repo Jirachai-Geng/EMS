@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <div fxFlex="48" fxLayout="column">
+        <div fxFlex="52" fxLayout="column">
             <mat-card class="mat-elevation-z8" style="height: 100%;">
                 <mat-card-title fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px" style="padding-bottom: 20px;">
                     <img src="assets/icons/use_summary.svg">
@@ -67,6 +67,7 @@
 
                                 </div>
                             </ng-template>
+                            <div echarts [options]="chartDay" class="chartHeight"></div>
 
                             <!-- <app-dashboard-summary-day *ngIf="summary_day"></app-dashboard-summary-day> -->
                         </mat-tab>
@@ -94,8 +95,7 @@
 
                                 </div>
                             </ng-template>
-
-                            <!-- <app-dashboard-summary-week *ngIf="summary_week"></app-dashboard-summary-week> -->
+                            <div echarts [options]="chartWeek" class="chartHeight"></div>
                         </mat-tab>
 
                         <!-- Energy Usage Summary date of month -->
@@ -147,6 +147,7 @@
 
                                 </div>
                             </ng-template>
+                            <div echarts [options]="chartYears" class="chartHeight"></div>
 
                             <!-- <app-dashboard-summary-year *ngIf="summary_year"></app-dashboard-summary-year> -->
                         </mat-tab>
@@ -157,52 +158,114 @@
             </mat-card>
         </div>
 
-        <div fxFlex="24" fxLayout="column">
+        <div fxFlex="20" fxLayout="column">
             <mat-card class="mat-elevation-z8" style="height: 100% !important;">
-                <mat-card-title fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="10px">
-                    <img style="margin-right:10px; height: 17px;" src="assets/icons/all-meter.svg">
-                     <div style="display:inline-block; font-size: 17px;">
-                        All Meter
+                <mat-card-title fxLayoutAlign="space-between stretch" fxLayoutGap="10px">
+                    <div fxLayout="row" fxLayoutAlign="start stretch">
+                        <img style="margin-right:10px; height: 17px;" src="assets/icons/all-meter.svg">
+                        <div style="display:inline-block; font-size: 17px;">
+                           All Meter
+                       </div>
                     </div>
+
+                    <u style="color: rgb(0, 132, 255); font-size: 14px; cursor: pointer;"
+                     (click)="onAllMeter()"> 
+                        more details </u>
+
                 </mat-card-title>
                 <mat-card-content fxLayout="column" fxLayoutAlign="space-between stretch" style="height: 95%">
 
-                    <div style="height: 100% !important;">
-                        <span>AHU A</span>
+                    <div style="height: 100% !important; padding: 10px;">
                         <div fxLayout="row" fxLayoutAlign="space-between center">
-                            <mat-progress-bar fxFlex="70" mode="determinate" value="40"></mat-progress-bar>
-                            <span>115</span>
+                            <span>id</span>
+                            <span>name</span>
+                            <span>kWh</span>
                         </div>
 
-                        <span>AHU A</span>
-                        <div fxLayout="row" fxLayoutAlign="space-between center">
-                            <mat-progress-bar fxFlex="70" mode="determinate" value="40"></mat-progress-bar>
-                            <span>115</span>
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="color: #01DE3C">
+                            <span>12</span>
+                            <span>AHU B</span>
+                            <span>5,972</span>
                         </div>
 
-                        <span>AHU A</span>
-                        <div fxLayout="row" fxLayoutAlign="space-between center">
-                            <mat-progress-bar fxFlex="70" mode="determinate" value="40"></mat-progress-bar>
-                            <span>115</span>
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="color: #01DE3C">
+                            <span>11</span>
+                            <span>AHU A</span>
+                            <span>4,972</span>
                         </div>
 
-                        <span>AHU A</span>
-                        <div fxLayout="row" fxLayoutAlign="space-between center">
-                            <mat-progress-bar fxFlex="70" mode="determinate" value="40"></mat-progress-bar>
-                            <span>115</span>
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="color: #01DE3C">
+                            <span>5</span>
+                            <span>Tower B</span>
+                            <span>3,972</span>
                         </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="color: red">
+                            <span>4</span>
+                            <span>Tower A</span>
+                            <span>2,572</span>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="color: #01DE3C">
+                            <span>6 </span>
+                            <span>PL A1</span>
+                            <span>2,572</span>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="color: #FD8D1D">
+                            <span>8</span>
+                            <span>PL A2</span>
+                            <span>2,572</span>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="color: #01DE3C">
+                            <span>7 </span>
+                            <span>PL B1</span>
+                            <span>2,572</span>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="color: #01DE3C">
+                            <span>9</span>
+                            <span>PL B2</span>
+                            <span>2,572</span>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="color: #FD8D1D">
+                            <span>10</span>
+                            <span>Tower Cooling</span>
+                            <span>1,387</span>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="color: #01DE3C">
+                            <span>16</span>
+                            <span>Water treatment</span>
+                            <span>171</span>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center" style="color: #01DE3C">
+                            <span>17</span>
+                            <span>Drain pump</span>
+                            <span>49</span>
+                        </div>
+
+                        <!-- <span>AHU B</span>
+                        <div fxLayout="row" fxLayoutAlign="space-between center">
+                            <mat-progress-bar fxFlex="80" mode="determinate" value="40"></mat-progress-bar>
+                            <span>5,432</span>
+                        </div> -->
+
                     </div>
 
-                    <div fxLayout="row" fxLayoutAlign="space-between center" style="justify-content: end;">
+                    <div fxLayout="row" fxLayoutAlign="space-between center" style="justify-content: end; padding: 10px;">
                         <div fxLayout="column" fxLayoutAlign="space-between center">
-                            <circle-progress [percent]="96" [radius]="40" [outerStrokeColor]="'#7FFFD4'"
+                            <circle-progress [percent]="96" [radius]="40" [outerStrokeColor]="'#01DE3C'"
                                 [showSubtitle]="false">
                             </circle-progress>
                             <span> Online </span>
                         </div>
 
                         <div fxLayout="column" fxLayoutAlign="space-between center">
-                            <circle-progress [percent]="3" [radius]="30" [outerStrokeColor]="'darkorange'"
+                            <circle-progress [percent]="2" [radius]="30" [outerStrokeColor]="'darkorange'"
                                 [showSubtitle]="false"></circle-progress>
                             <span> Warning </span>
                         </div>

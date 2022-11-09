@@ -1,0 +1,48 @@
+::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0px;
+}
+
+::ng-deep .mat-form-field-infix {
+    width: 100px !important;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+.example-additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+}
+
+.mat-form-field {
+    padding-left: 8px;
+}
+
+#hide-width-field {
+    ::ng-deep {
+        .mat-form-field-infix {
+            width: 0px !important;
+        }
+    }
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #5B78FA;
+}
+
+::ng-deep .mat-checkbox-checkmark-path {
+    stroke: #7FFFD4 !important;
+}
+
+::ng-deep .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: 5B78FA;
+}
+
+
+.btn-submit {
+    background-color: #5B78FA;
+    color: white;
+}

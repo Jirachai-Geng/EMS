@@ -4,15 +4,15 @@
             <mat-card-title style="display:inline-block; font-size: 17px;">
                 All Power Meter Monitering
             </mat-card-title>
-    </div>
+        </div>
 
         <div>
             <table mat-table [dataSource]="dataSource" matSort class="hearder">
 
-                <!-- meter_name Column -->
-                <ng-container matColumnDef="meter_name" class="make-blue">
+                <!-- Meter_ID Column -->
+                <ng-container matColumnDef="Meter_ID" class="make-blue">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Meter ID </th>
-                    <td mat-cell *matCellDef="let element"> {{element.meter_name}} </td>
+                    <td mat-cell *matCellDef="let element"> {{element.Meter_ID}} </td>
                 </ng-container>
 
                 <!-- Name Column -->
@@ -29,20 +29,26 @@
 
                 <!-- KWH Column -->
                 <ng-container matColumnDef="Active_Energy">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Active_Energy </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> kWh </th>
                     <td mat-cell *matCellDef="let element"> {{element.KWH | number: '1.2-2'}} </td>
                 </ng-container>
 
 
                 <!-- TAP Column -->
                 <ng-container matColumnDef="Active_Power">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Active_Power </th>
-                    <td mat-cell *matCellDef="let element"> {{element.AP | number : '1.2-2'}} </td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Active Power </th>
+                    <td mat-cell *matCellDef="let element"> {{element.TAP | number : '1.2-2'}} </td>
+                </ng-container>
+
+                <!-- KVARH Column -->
+                <ng-container matColumnDef="KVARH">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Power KVARH </th>
+                    <td mat-cell *matCellDef="let element"> {{element.KVARH | number : '1.2-2'}} </td>
                 </ng-container>
 
                 <!-- PF Column -->
                 <ng-container matColumnDef="Power_Factor">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Power_Factor </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Power Factor </th>
                     <td mat-cell *matCellDef="let element"> {{element.PF | number : '1.2-2'}} </td>
                 </ng-container>
 
@@ -52,8 +58,14 @@
                     <td mat-cell *matCellDef="let element"> {{element.FREQ | number : '1.2-2'}} </td>
                 </ng-container>
 
+                <!-- Status Column -->
+                <ng-container matColumnDef="Status">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                    <td mat-cell *matCellDef="let element" style="color: #FD8D1D ;" [ngClass]="{'text-green': element.Status  == 'online','text-red': element.Status  == 'offline'}"> {{element.Status }} </td>
+                </ng-container>
+
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row [ngClass]="{'make-blue': row.meter_name == 'meter_name'}"
+                <tr mat-row [ngClass]="{'make-blue': row.name == 'name'}"
                     *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
         </div>

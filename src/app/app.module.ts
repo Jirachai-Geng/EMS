@@ -48,6 +48,7 @@ import { ExploreGraphAComponent } from './components/explore-graph-a/explore-gra
 import { ExploreGraphBComponent } from './components/explore-graph-b/explore-graph-b.component';
 import { ExploreGraphCComponent } from './components/explore-graph-c/explore-graph-c.component';
 import { ExploreGraphDComponent } from './components/explore-graph-d/explore-graph-d.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { ExploreGraphDComponent } from './components/explore-graph-d/explore-gra
     ExploreGraphBComponent,
     ExploreGraphCComponent,
     ExploreGraphDComponent,
+    LoginComponent,
   
   ],
   imports: [

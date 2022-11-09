@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="10px" id="box-content" class="stats-cards">
-    <mat-card fxFlex="100" [class.explore-maxWidth]="!hidesetting">
+    <mat-card class="mat-elevation-z8" fxFlex="100" [class.explore-maxWidth]="!hidesetting">
         <div fxLayout="row" fxLayoutAlign="space-between center">
             <div fxLayout="row" fxLayoutAlign="start end" fxLayoutGap="10px">
                 <img style="margin-right:10px;" src="assets/icons/page/explore/explore.svg">
@@ -48,14 +48,14 @@
 
                 </div>
                 <mat-card-content>
-                    <!-- <div style="height: 410px" [chart]="graphA"></div> -->
+                    <div echarts [options]="chartOptions" class="chartHeight"></div>
                 </mat-card-content>
             </mat-card>
 
         </div>
     </mat-card>
 
-    <mat-card class="mat-elevation-z8" fxFlex="35" [class.hide-element]="hidesetting">
+    <mat-card class="mat-elevation-z8" fxFlex="30" [class.hide-element]="hidesetting">
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="gappx">
             <mat-card-title style="display:inline-block; font-size: 17px;">
                 Setting
@@ -67,17 +67,17 @@
 
         <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
             <button mat-button [class.active]="activebutton === 0" (click)="setIndex(0)">GraphA</button>
-            <button mat-button [class.active]="activebutton === 1" (click)="setIndex(1)">GraphB</button>
-            <button mat-button [class.active]="activebutton === 2" (click)="setIndex(2)">GraphC</button>
-            <button mat-button [class.active]="activebutton === 3" (click)="setIndex(3)">GraphD</button>
+            <button mat-button [disabled] >GraphB</button>
+            <button mat-button [disabled] >GraphC</button>
+            <button mat-button [disabled] >GraphD</button>
         </div>
 
         <mat-card-content class="divider">
             <mat-divider></mat-divider>
         </mat-card-content>
         <app-explore-graph-a [class.hide-element]="!check_SelectgraphA"></app-explore-graph-a>
-        <app-explore-graph-b [class.hide-element]="!check_SelectgraphB"></app-explore-graph-b>
+        <!-- <app-explore-graph-b [class.hide-element]="!check_SelectgraphB"></app-explore-graph-b>
         <app-explore-graph-c [class.hide-element]="!check_SelectgraphC"></app-explore-graph-c>
-        <app-explore-graph-d [class.hide-element]="!check_SelectgraphD"></app-explore-graph-d>
+        <app-explore-graph-d [class.hide-element]="!check_SelectgraphD"></app-explore-graph-d> -->
     </mat-card>
 </div>

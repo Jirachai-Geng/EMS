@@ -1,33 +1,46 @@
 #box-content {
-    overflow: hidden;
-    margin-right: 0;
-    margin-top: 10px;
-    padding: 10px;
+  overflow: hidden;
+  margin-right: 0;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+}
+
+.make-blue {
+  background-color: rgb(91, 120, 250) !important;
+
+  .mat-cell {
+    color: white;
   }
-  
-  table {
-    width: 100%;
-  }
-  
-  .make-blue {
-    background-color: rgb(91, 120, 250)!important;
-    .mat-cell {
-      color: white;
-    }
-  }
-  
-  .hearder {
-    .mat-header-cell {
-      color: black;
-      font-size: 15px;
-    }
-  }
-  
-  .mat-row:nth-child(even) {
-    background-color: #f8f9fb;
-  }
-  
+}
+
+.hearder {
   .mat-header-cell {
-    background-color: rgb(91, 120, 250)!important;
-    color: #7FFFD4 !important;
+    color: black;
+    font-size: 15px;
   }
+}
+
+.mat-row:nth-child(even) {
+  background-color: #f8f9fb;
+}
+
+.mat-header-cell {
+  background-color: rgb(91, 120, 250) !important;
+  color: #7FFFD4 !important;
+}
+
+.text-green {
+  color: #01DE3C !important;
+}
+
+.text-red {
+  color: red !important;
+}
+
+.text-yellow {
+  color: #FD8D1D !important;
+}

@@ -43,7 +43,7 @@ export class MenuComponent {
   }
 
   logout() {
-    // localStorage.removeItem(environment.access_token);
+    localStorage.removeItem("islogin");
     this.router.navigate(['/login']);
   }
 

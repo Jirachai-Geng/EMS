@@ -15,7 +15,10 @@ export class PowerQualityComponent implements OnInit {
   meter_name = '1'
 
   cards = [
-    { id: 16, title: 'Main', sub_title: 'จ่ายไฟตึก 2' },
+    { id: 1, title: 'MDB1', sub_title: 'จ่ายไฟอาคาร' },
+    { id: 2, title: 'MDB2', sub_title: 'ระบบปรับอากาศ' },
+    { id: 3, title: 'MDB3', sub_title: 'ระบบน้ำ' },
+
   ];
 
   time = new Date();

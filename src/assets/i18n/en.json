@@ -9,6 +9,7 @@
   },
   "menu": {
     "dashboard": "Dashboard",
+    "explore": "Explore",
     "power_quality": "Power Quality",
     "tenant": "Tenant",
     "leases": "Rental",

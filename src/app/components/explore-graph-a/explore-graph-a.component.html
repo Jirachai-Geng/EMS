@@ -42,4 +42,9 @@
         </mat-tree-node>
     </mat-tree>
 
+    <button style="  display: block; margin-left: auto; margin-right: 0;" 
+    [disabled]="disableSubmit" type="submit" mat-raised-button [ngClass]="{'btn-submit': disableSubmit === false}">
+        {{"graph.submit"|translate}}
+    </button>
+
 </div>

@@ -20,15 +20,27 @@ export class TodoItemFlatNode {
 }
 
 const TREE_DATA = {
-  Groceries: {
-    'Almond Meal flour': null,
-    'Organic eggs': null,
-    'Protein Powder': null,
-    Fruits: {
-      Apple: null,
-      Berries: ['Blueberry', 'Raspberry'],
-      Orange: null,
+  site1: {
+    MDB1:{
+      TowerA: {
+        PLA1: null,
+        PLA2: null,
+      },    
+      TowerB: {
+        PLB1: null,
+        PLB2: null,
+      },
     },
+    MDB2:{
+      TowerCooling: null,
+      AHUA: null,
+      AHUB: null,
+    },
+    MDB3:{
+      WaterPump: null,
+      WaterTreatment: null,
+      DrainPump: null,
+    }
   }
 };
 
@@ -107,7 +119,7 @@ export class ChecklistDatabase {
 export class ExploreGraphAComponent  {
   ParameterCtr: any = {};
   palette = true;
-
+  disableSubmit: boolean  = true;
   countPost_api: number = 0;
   post_api: any = {
     conut: this.countPost_api,
@@ -159,22 +171,24 @@ export class ExploreGraphAComponent  {
     }
   }
 
-  onChangeParameter(value: any, position: any) {
+  public req:any = [];
+  onChangeParameter(prames: any, meter: any) {
+    console.log(`meter: ${meter} ,prames: ${prames}`)
     const temp: any[] = [];
-    temp.push(value);
-    temp.push(position);
+    temp.push(prames);
+    temp.push(meter);
     if (this.checkDupes(temp)) {
     } else {
       this.parameter_positon.push(temp);
     }
-    this.rest_api(
-      this.checklistSelection.selected,
-      this.parameter_positon
-    );
+    // this.rest_api(
+    //   this.checklistSelection.selected,
+    //   this.parameter_positon
+    // );
    
   }
 
-  rest_api(sensor_id: any, parameter: any) {
+  onsubmit(sensor_id: any, parameter: any) {
     const sensor_idArr: any = [];
     for (let i = 0; i < sensor_id.length; i++) {
       sensor_idArr.push(sensor_id[i].item);
@@ -185,6 +199,8 @@ export class ExploreGraphAComponent  {
     };
     this.post_api = result
     this.countPost_api++
+    this.disableSubmit = false;
+
     console.log(this.checkDup_tree(parameter, sensor_idArr))
   }
 
