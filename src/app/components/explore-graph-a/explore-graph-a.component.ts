@@ -21,16 +21,6 @@ export class TodoItemFlatNode {
 
 const TREE_DATA = {
   site1: {
-    MDB1:{
-      TowerA: {
-        PLA1: null,
-        PLA2: null,
-      },    
-      TowerB: {
-        PLB1: null,
-        PLB2: null,
-      },
-    },
     MDB2:{
       TowerCooling: null,
       AHUA: null,
@@ -181,10 +171,6 @@ export class ExploreGraphAComponent  {
     } else {
       this.parameter_positon.push(temp);
     }
-    // this.rest_api(
-    //   this.checklistSelection.selected,
-    //   this.parameter_positon
-    // );
    
   }
 

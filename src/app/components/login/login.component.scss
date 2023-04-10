@@ -49,4 +49,38 @@
     border-radius: 10px;
     color: #FFF;
     background-color: #5B78FA;
-  }
+}
+
+
+.img2 {
+    width: 2000px !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.parent {
+    border: 2px black dotted;
+    display: inline-block;
+}
+
+.box {
+    display: inline-block;
+    background: red;
+    width: 100px;
+    height: 100px;
+}
+
+.twobutton {
+    top: 600px;
+    left: 600px;
+    background: green;
+    position: relative ;
+    opacity: 0;
+}
+
+#two {
+    top: 20px;
+    left: 20px;
+    background: green;
+    position: relative ;
+}

@@ -1,7 +1,7 @@
 <div fxLayout="column" fxFlexFill fxLayoutAlign="center stretch" class="demo-wrap">
     <div fxLayout="row" fxLayoutAlign="center stretch">
         <div fxFlex="65" fxHide fxShow.gt-sm fxLayout="column" fxLayoutAlign="center center">
-            <img ngClass="img-factory" src="assets/images/factory.svg">
+            <img ngClass="img-factory" src="assets/images/factory.svg" style="width: 1200px !important;">
             <button mat-raised-button class="btn-detail">{{"login.details" | translate}}</button>
             <P style="font-size: 12px; color: grey;"> copyright 2021 &copy; {{"login.copy_right" | translate}} </P>
         </div>
@@ -9,7 +9,7 @@
             <mat-card ngClass="login-box" class="mat-elevation-z8" style="height: 70% !important;">
                 <div div fxLayout="column" fxLayoutAlign="space-between none" style="height: 100%;">
                     <div>
-                        <img mat-card-image style="width: 300px;" src="assets/images/logo-full.svg">
+                        <img mat-card-image style="width: 300px;" src="assets/logo-provider.svg">
                         <mat-card-content style="padding-top: 30px">
                             <form #loginForm="ngForm" (submit)="onSubmit(loginForm.value)">
                                 <p>

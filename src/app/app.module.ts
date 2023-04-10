@@ -49,6 +49,7 @@ import { ExploreGraphBComponent } from './components/explore-graph-b/explore-gra
 import { ExploreGraphCComponent } from './components/explore-graph-c/explore-graph-c.component';
 import { ExploreGraphDComponent } from './components/explore-graph-d/explore-graph-d.component';
 import { LoginComponent } from './components/login/login.component';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { LoginComponent } from './components/login/login.component';
   
   ],
   imports: [
+    NgxImageZoomModule ,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

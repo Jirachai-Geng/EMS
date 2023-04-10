@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { RestService } from 'src/app/services/rest.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements AfterViewInit, OnInit {
   user = new FormControl('', [Validators.required]);
   hide = true;
   error = null;
@@ -25,18 +25,25 @@ export class LoginComponent implements OnInit {
     return null
   }
   openDialog(element: any) {
-    // const dialogRef = this.dialog.open(AuthErrorComponent, {data: {result: element}, disableClose: true});
-    // dialogRef.afterClosed().subscribe((result) => {
-    // });
   }
   
   async onSubmit(value: any) {
-    if(value.email === 'xtem-ems@demo.com' && value.password === "dem0x10ems"){
+    if(value.email === 'demo-ems@entechsi.com' && value.password === "dem0ems"){
       this.router.navigate(['/dashboard']);
       localStorage.setItem("islogin", "true")
     } else {
       alert('login failed')
     }
+  }
+
+  name = "Angular";
+  ngOnInit() {}
+  ngAfterViewInit() {
+
+  }
+
+  onClickTest(){
+    alert('onClickTest')
   }
 
   selectedValue: string = this.translate.currentLang
@@ -46,8 +53,6 @@ export class LoginComponent implements OnInit {
     {value: 'en', viewValue: 'English'},
   ];
 
-  ngOnInit(): void {
-  }
 
   onSelectLanguage(value: any){
     this.translate.use(value);
